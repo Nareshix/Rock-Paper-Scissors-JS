@@ -30,6 +30,6 @@ const playRound = (humanChoice, computerChoice) => {
 }  
 
 for (let  i =0; i < 5; ++i){
-    const humanChoice = prompt().toLowerCase();
-    console.log(playRound(humanChoice, getComputerChoice()));
+    const getHumanChoice = prompt().toLowerCase();
+    console.log(playRound(getHumanChoice, getComputerChoice()));
 }
