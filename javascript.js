@@ -20,11 +20,11 @@ const playRound = (humanChoice, computerChoice) => {
     }
     if (won[humanChoice][computerChoice]){
         ++humanScore;
-        return `You Won! ${humanChoice} beats ${computerChoice}`
+        return `You Won! ${humanChoice} beats ${computerChoice}`;
     }
     else{
         ++computerScore;
-        return `You Lost. ${computerChoice} beats ${humanChoice}`
+        return `You Lost. ${computerChoice} beats ${humanChoice}`;
     }
 
 }  
@@ -32,4 +32,14 @@ const playRound = (humanChoice, computerChoice) => {
 for (let  i =0; i < 5; ++i){
     const getHumanChoice = prompt().toLowerCase();
     console.log(playRound(getHumanChoice, getComputerChoice()));
+}
+
+if (humanScore > computerScore){
+    console.log(`You won with ${humanScore} points. The computer got ${computerScore} points`);
+}
+else if (humanScore < computerScore){
+    console.log(`You lost with ${humanScore} points. The computer got ${computerScore} points`);
+}
+else{
+    console.log(`It's a tie of ${humanScore} points`);
 }
