@@ -3,4 +3,7 @@ const getComputerChoice = () => {
     const index = Math.round(Math.random() * 2)
     return choice[index];
 }
-humanChoice = prompt();
+const humanChoice = prompt();
+
+let humanScore = 0;
+let computerScore  = 0;
