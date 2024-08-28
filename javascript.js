@@ -8,9 +8,24 @@ let humanScore = 0;
 let computerScore  = 0;
 
 
+const won = {
+    'scissor': {'paper': true, 'stone': false},
+    'paper': {'stone': true, 'scissor': false},
+    'stone': {'scissor': true, 'paper':false},
+};
+const playRound = (humanChoice, computerChoice) => {
+    if (humanChoice === computerChoice){
+        ++humanScore;
+        ++computerScore;
+        return 'Its a TIE!';
+    }
+    if (won[humanChoice][computerChoice]){
+        ++humanScore;
+        return `You Won! ${humanChoice} beats ${computerChoice}`
+    }
+    else{
+        ++computerScore;
+        return `You Lost. ${computerChoice} beats ${humanChoice}`
+    }
 
-// const won = {'paper': ['stone', 'scissor']}
-// const playRound = (humanChoice, getComputerChoice()) => {
-//     if (humanChoice)
-// }   
-
+}  
