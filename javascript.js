@@ -3,7 +3,6 @@ const getComputerChoice = () => {
     const index = Math.round(Math.random() * 2)
     return choice[index];
 }
-const humanChoice = prompt().toLowerCase();
 let humanScore = 0;
 let computerScore  = 0;
 
@@ -29,3 +28,8 @@ const playRound = (humanChoice, computerChoice) => {
     }
 
 }  
+
+for (let  i =0; i < 5; ++i){
+    const humanChoice = prompt().toLowerCase();
+    console.log(playRound(humanChoice, getComputerChoice()));
+}
