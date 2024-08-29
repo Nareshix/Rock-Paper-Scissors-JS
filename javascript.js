@@ -29,17 +29,14 @@ const playRound = (humanChoice, computerChoice) => {
 
 }  
 
-for (let  i =0; i < 5; ++i){
-    const getHumanChoice = prompt().toLowerCase();
-    console.log(playRound(getHumanChoice, getComputerChoice()));
-}
+const body = document.querySelector('body');
 
-if (humanScore > computerScore){
-    console.log(`You won with ${humanScore} points. The computer got ${computerScore} points`);
-}
-else if (humanScore < computerScore){
-    console.log(`You lost with ${humanScore} points. The computer got ${computerScore} points`);
-}
-else{
-    console.log(`It's a tie of ${humanScore} points`);
-}
+const scissor = document.createElement('button');
+const paper = document.createElement('button');
+const stone = document.createElement('button');
+
+scissor.textContent = 'scissor';
+paper.textContent = 'paper';
+stone.textContent = 'stone';
+
+body.append(scissor, paper, stone);
