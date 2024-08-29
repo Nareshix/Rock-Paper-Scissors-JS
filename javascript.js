@@ -63,6 +63,9 @@ choices.forEach(choice => {
         const div = document.createElement('div');
         body.append(div);
         div.append(playRound(choice.textContent, getComputerChoice()));
+        displayComputerScore.textContent = `Computer Score: ${computerScore}`;
+        displayHumanScore.textContent = `Human Score: ${humanScore}`;
+
     })
 });
 
