@@ -1,6 +1,6 @@
 const getComputerChoice = () => {
     const choice= ['scissor', 'paper', 'stone'];
-    const index = Math.round(Math.random() * 2)
+    const index = Math.floor(Math.random() * (4-1) + 1)
     return choice[index];
 }
 let humanScore = 0;
