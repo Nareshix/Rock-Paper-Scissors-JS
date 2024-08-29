@@ -40,3 +40,21 @@ paper.textContent = 'paper';
 stone.textContent = 'stone';
 
 body.append(scissor, paper, stone);
+
+
+const choices = document.querySelectorAll('button');
+
+choices.forEach(choice => {
+    choice.addEventListener('click', () => {
+        if (humanScore === 5){
+            body.append('Human won!');
+        }
+        else if (computerScore === 5){
+            body.append('Computer Won!');
+        }
+        const div = document.createElement('div');
+        body.append(div);
+        div.append(playRound(choice.textContent, getComputerChoice()));
+    })
+});
+
