@@ -50,6 +50,27 @@ displayHumanScore.textContent = `Human Score: ${humanScore}`;
 body.append(displayComputerScore, displayHumanScore)
 
 
+
+const disableButtons = () => {
+    let allButtons = document.querySelectorAll('button');
+    
+    allButtons.forEach(button => {
+        button.disabled = true;    
+    });
+}
+
+const whoWon = () => {
+    if (humanScore === 5){
+        body.append('Human won!');
+        disableButtons();
+    }
+    else if (computerScore === 5){
+        body.append('Computer won!')
+        disableButtons();
+    }
+}
+
+
 choices.forEach(choice => {
     choice.addEventListener('click', () => {
         const div = document.createElement('div');
@@ -57,12 +78,7 @@ choices.forEach(choice => {
         div.append(playRound(choice.textContent, getComputerChoice()));
         displayComputerScore.textContent = `Computer Score: ${computerScore}`;
         displayHumanScore.textContent = `Human Score: ${humanScore}`;
-        if (humanScore === 5){
-            body.append('Human won!');
-        }
-        else if (computerScore === 5){
-            body.append('Computer Won!');
-        }
-    })
-});
+        whoWon();
 
+})
+});
