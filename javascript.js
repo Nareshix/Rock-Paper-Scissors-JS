@@ -44,6 +44,14 @@ body.append(scissor, paper, stone);
 
 const choices = document.querySelectorAll('button');
 
+const displayHumanScore = document.createElement('div');
+const displayComputerScore = document.createElement('div');
+
+displayComputerScore.textContent = `Computer Score: ${computerScore}`;
+displayHumanScore.textContent = `Human Score: ${humanScore}`;
+body.append(displayComputerScore, displayHumanScore)
+
+
 choices.forEach(choice => {
     choice.addEventListener('click', () => {
         if (humanScore === 5){
