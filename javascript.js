@@ -52,18 +52,17 @@ body.append(displayComputerScore, displayHumanScore)
 
 choices.forEach(choice => {
     choice.addEventListener('click', () => {
+        const div = document.createElement('div');
+        body.append(div);
+        div.append(playRound(choice.textContent, getComputerChoice()));
+        displayComputerScore.textContent = `Computer Score: ${computerScore}`;
+        displayHumanScore.textContent = `Human Score: ${humanScore}`;
         if (humanScore === 5){
             body.append('Human won!');
         }
         else if (computerScore === 5){
             body.append('Computer Won!');
         }
-        const div = document.createElement('div');
-        body.append(div);
-        div.append(playRound(choice.textContent, getComputerChoice()));
-        displayComputerScore.textContent = `Computer Score: ${computerScore}`;
-        displayHumanScore.textContent = `Human Score: ${humanScore}`;
-
     })
 });
 
