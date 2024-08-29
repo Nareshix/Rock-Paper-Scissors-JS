@@ -14,8 +14,6 @@ const won = {
 };
 const playRound = (humanChoice, computerChoice) => {
     if (humanChoice === computerChoice){
-        ++humanScore;
-        ++computerScore;
         return 'Its a TIE!';
     }
     if (won[humanChoice][computerChoice]){
